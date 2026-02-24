@@ -1,5 +1,9 @@
 from http import HTTPStatus
 
+from sqlalchemy import select
+
+from embarqueja_fast.Models import User
+
 
 def test_criar_cliente(client):
 
@@ -104,3 +108,15 @@ def test_deletar_cliente_falho(client):
 
     assert response.status_code == HTTPStatus.NOT_FOUND
     assert response.json() == {'detail': 'User not found'}
+
+
+def test_create_new_user(session):
+
+    user = User(email='test@email.com', name='testName', password='pass')
+
+    session.add(user)
+    session.commit()
+
+    response = session.scalar(select(User).filter(User.email == user.email))
+
+    assert response.name == 'testName'
