@@ -4,7 +4,7 @@ from base.BaseModels import ModelBase
 
 class UserModel(ModelBase):
 
-    __tablename__ = 'user_model'
+    __tablename__ = 'users'
 
     name = Column(String(), nullable=False)
     email = Column(String(), nullable=False)
