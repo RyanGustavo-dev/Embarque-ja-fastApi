@@ -15,3 +15,11 @@ class ModelBase(Base):
     created_at = Column(DateTime(timezone=False),default=datetime.now)
     updated_at = Column(DateTime(timezone=False),default=datetime.now, onupdate=datetime.now)
     deleted_at = Column(DateTime(timezone=False))
+
+class BaseNoId(Base):
+    __abstract__ = True
+    __table_args__ = {"schema":"public"}
+
+    created_at = Column(DateTime(timezone=False),default=datetime.now)
+    updated_at = Column(DateTime(timezone=False),default=datetime.now, onupdate=datetime.now)
+    deleted_at = Column(DateTime(timezone=False))

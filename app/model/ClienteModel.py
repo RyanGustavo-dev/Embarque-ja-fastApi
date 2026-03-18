@@ -14,4 +14,6 @@ class ClienteModel(ModelBase):
     email = Column(String(), unique=True)
     celular = Column(String())
     data_nascimento = Column(Date())
+
     endereco = relationship("EnderecoModel", back_populates="cliente", uselist=False)
+    reserva = relationship("ReservaModel", back_populates="cliente")
