@@ -1,8 +1,8 @@
 from sqlalchemy import Column, Integer, String,ForeignKey,Enum, TIME
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects import postgresql
-from base.BaseModels import ModelBase
-from AssociateTables import ExcursaoEmbarque
+from model.base.BaseModels import ModelBase
+from model.AssociateTables import ExcursaoEmbarque
 
 class EmbarqueModel(ModelBase):
     __tablename__ = "embarque"

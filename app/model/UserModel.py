@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Boolean, DateTime, func, Text
-from base.BaseModels import ModelBase
+from model.base.BaseModels import ModelBase
 
 
 class UserModel(ModelBase):
