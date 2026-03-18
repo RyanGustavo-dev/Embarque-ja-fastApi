@@ -1,8 +1,8 @@
 from sqlalchemy import Column, Integer, String,ForeignKey,Enum, DECIMAL
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects import postgresql
-from base.BaseModels import ModelBase
-from AssociateTables import ExcursaoOnibusModel
+from model.base.BaseModels import ModelBase
+from model.AssociateTables import ExcursaoOnibusModel
 class OnibusModel(ModelBase):
 
     __tablename__ = 'onibus'

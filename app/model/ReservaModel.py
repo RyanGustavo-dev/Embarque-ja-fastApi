@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String,ForeignKey,Enum, DECIMAL
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects import postgresql
-from base.BaseModels import ModelBase
+from model.base.BaseModels import ModelBase
 from model.enums.StatusAssento import StatusAssento
 
 
@@ -11,7 +11,7 @@ class ReservaModel(ModelBase):
     status_assento = Column(Enum(StatusAssento))
     numero_assento = Column(Integer())
     excursao_onibus_id = Column(postgresql.UUID, ForeignKey('public.excursao_onibus.id'))
-    cliente_id = Column(postgresql.UUID, ForeignKey('public.cliente.id'))
+    cliente_id = Column(postgresql.UUID, ForeignKey('public.clientes.id'))
     valor_pago = Column(DECIMAL(10, 2))
 
     cliente = relationship("ClienteModel", back_populates="reserva")

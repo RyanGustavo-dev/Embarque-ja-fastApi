@@ -67,9 +67,48 @@ Este projeto está sob a licença [LICENSE]. Veja o arquivo `LICENSE` para mais 
 
 ## Documentação Adicional
 
+## Alembic com autogenerate
+
+O projeto agora está preparado para gerar migrations automaticamente a partir dos models SQLAlchemy.
+
+### Como funciona
+
+- O Alembic usa `Base.metadata` definido em `app/database/session.py`.
+- O arquivo `alembic/env.py` importa o pacote `model` para registrar todos os models antes do `autogenerate`.
+- A URL do banco é lida da variável `database_url` no `.env`.
+
+### Comandos
+
+1. Instale as dependências:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. Garanta que o `.env` tenha `database_url` apontando para o PostgreSQL.
+
+3. Gere uma migration automática:
+
+```bash
+alembic revision --autogenerate -m "create tables"
+```
+
+4. Aplique as migrations:
+
+```bash
+alembic upgrade head
+```
+
+### Se o autogenerate não encontrar mudanças
+
+Verifique se:
+
+- o model novo foi importado em `app/model/__init__.py`;
+- ele herda de `ModelBase` ou `BaseNoId`;
+- a variável `target_metadata` em `alembic/env.py` está como `Base.metadata`.
+
 
 ⭐ **Gostou do projeto? Deixe uma estrela!**
-
 
 
 

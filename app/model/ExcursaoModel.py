@@ -1,9 +1,9 @@
 from sqlalchemy import Column, Integer, String,DECIMAL,Enum, DATE
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects import postgresql
-from base.BaseModels import ModelBase
-from enums.StatusViagem import StatusViagem
-from AssociateTables import ExcursaoOnibusModel,ExcursaoEmbarque
+from model.base.BaseModels import ModelBase
+from model.enums.StatusViagem import StatusViagem
+from model.AssociateTables import ExcursaoOnibusModel, ExcursaoEmbarque
 class ExcursaoModel(ModelBase):
     __tablename__ = "excursao"
 
@@ -16,4 +16,4 @@ class ExcursaoModel(ModelBase):
     preco = Column(DECIMAL(10,2))
 
     excursao_onibus = relationship(ExcursaoOnibusModel, back_populates="excursao")
-    excursao_embarque = relationship(ExcursaoEmbarque, back_populates="embarque")
+    excursao_embarque = relationship(ExcursaoEmbarque, back_populates="excursao")
