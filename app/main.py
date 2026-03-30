@@ -1,7 +1,5 @@
 from fastapi import FastAPI
-from controller import UserController
-from app.database.session import engine
-from app.database.session import Base
+from app.controller import UserController as UserController
 
 app = FastAPI(title='Embarque-já', version='0.0.1')
 
