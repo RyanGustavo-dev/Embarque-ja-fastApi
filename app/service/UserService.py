@@ -13,7 +13,7 @@ def getAllUsers(db: Session) -> UserModel:
     return user
 
 def create_user(db:Session , data: UserBase) -> UserModel:
-    exist = db.query(UserModel.email == data.email).first()
+    exist = db.query(UserModel).filter(UserModel.email == data.email).first()
     if exist:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
@@ -29,5 +29,5 @@ def create_user(db:Session , data: UserBase) -> UserModel:
     )
     db.add(user)
     db.commit()
-    db.refresh
+    db.refresh(user)
     return user
