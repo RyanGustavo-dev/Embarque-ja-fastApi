@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean, DateTime, func, text
 from sqlalchemy.dialects import postgresql
 from datetime import datetime
-from database.session import Base
+from app.database.session import Base
 
 class ModelBase(Base):
     __abstract__ = True

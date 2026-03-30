@@ -1,11 +1,11 @@
-from model.AssociateTables import ExcursaoEmbarque, ExcursaoOnibusModel
-from model.ClienteModel import ClienteModel
-from model.EmbarqueModel import EmbarqueModel
-from model.EnderecoModel import EnderecoModel
-from model.ExcursaoModel import ExcursaoModel
-from model.OnibusModel import OnibusModel
-from model.ReservaModel import ReservaModel
-from model.UserModel import UserModel
+from app.model.AssociateTables import ExcursaoEmbarque, ExcursaoOnibusModel
+from app.model.ClienteModel import ClienteModel
+from app.model.EmbarqueModel import EmbarqueModel
+from app.model.EnderecoModel import EnderecoModel
+from app.model.ExcursaoModel import ExcursaoModel
+from app.model.OnibusModel import OnibusModel
+from app.model.ReservaModel import ReservaModel
+from app.model.UserModel import UserModel
 
 __all__ = [
     "ClienteModel",

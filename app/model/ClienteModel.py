@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String,ForeignKey, Date
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects import postgresql
-from model.base.BaseModels import ModelBase
+from app.model.base.BaseModels import ModelBase
 
 
 class ClienteModel(ModelBase):

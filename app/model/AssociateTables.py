@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String,ForeignKey,Enum, DECIMAL
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects import postgresql
-from model.base.BaseModels import ModelBase, BaseNoId
+from app.model.base.BaseModels import ModelBase, BaseNoId
 
 
 class ExcursaoOnibusModel(ModelBase):

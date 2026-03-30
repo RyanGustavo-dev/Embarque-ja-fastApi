@@ -1,8 +1,8 @@
 from sqlalchemy import Column, Integer, String,ForeignKey,Enum, DECIMAL
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects import postgresql
-from model.base.BaseModels import ModelBase
-from model.enums.StatusAssento import StatusAssento
+from app.model.base.BaseModels import ModelBase
+from app.model.enums.StatusAssento import StatusAssento
 
 
 class ReservaModel(ModelBase):
